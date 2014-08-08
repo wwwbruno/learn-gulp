@@ -16,3 +16,4 @@
 
 ### install dependencies
 `npm install gulp-minify-css`
+`npm install gulp-concat`
