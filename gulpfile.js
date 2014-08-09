@@ -9,4 +9,8 @@ gulp.task('default', function() {
 	    .pipe(minifyCSS())
 	    .pipe(gulp.dest('./css'));
 
+	gulp.src('./src/js/*.js')
+	    .pipe(concat('apps.js'))
+	    .pipe(gulp.dest('./js'));
+
 });
