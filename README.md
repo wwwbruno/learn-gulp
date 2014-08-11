@@ -15,5 +15,8 @@
 `npm install gulp`
 
 ### install dependencies
+`npm install gulp-uglifyjs`
+
 `npm install gulp-minify-css`
+
 `npm install gulp-concat`
