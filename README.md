@@ -12,11 +12,7 @@
 
 ## Install:
 ### install gulp at the root of your project
-`npm install gulp`
+`npm install gulp --save-dev`
 
 ### install dependencies
-`npm install gulp-uglifyjs`
-
-`npm install gulp-minify-css`
-
-`npm install gulp-concat`
+`npm install gulp-uglifyjs gulp-minify-css gulp-concat --save-dev`
