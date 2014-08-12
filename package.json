@@ -1,0 +1,23 @@
+{
+  "name": "learn-gulp",
+  "version": "0.0.1",
+  "description": "Learn Gulp",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.7",
+    "gulp-minify-css": "~0.3.7",
+    "gulp-concat": "~2.3.4",
+    "gulp-uglifyjs": "~0.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wwwbruno/learn-gulp.git"
+  },
+  "author": "Bruno Almeida <bruno@disvolvi.com>",
+  "license": "GPL v2",
+  "readmeFilename": "README.md",
+  "gitHead": "00ec48d2e912cc5c6563ce98b647fe1365f4e7da"
+}
