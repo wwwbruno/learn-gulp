@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 minifyCSS = require('gulp-minify-css'),
 uglifyJS = require('gulp-uglifyjs'),
-concat = require('gulp-concat');
+concat = require('gulp-concat'),
+imagemin = require('gulp-imagemin');
  
 gulp.task('minify', function() {
 
@@ -19,9 +20,17 @@ gulp.task('uglify', function() {
 	    .pipe(gulp.dest('./js'));
 });
 
+gulp.task('imagemin', function() {
+
+	gulp.src('./src/images/*')
+	    .pipe(imagemin())
+	    .pipe(gulp.dest('./images'));
+});
+
 gulp.task('watch', function() {
     gulp.watch('./src/css/*.css', ['minify']);
     gulp.watch('./src/js/*.js', ['uglify']);
+    gulp.watch('./src/images/*', ['uglify']);
 });
 
-gulp.task('default', ['minify','uglify','watch']);
+gulp.task('default', ['imagemin','minify','uglify','watch']);
