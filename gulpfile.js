@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 sass = require('gulp-sass'),
 minifyCSS = require('gulp-minify-css'),
 uglifyJS = require('gulp-uglifyjs'),
+coffee = require('gulp-coffee'),
 concat = require('gulp-concat'),
 imagemin = require('gulp-imagemin');
  
@@ -16,7 +17,8 @@ gulp.task('minify', function() {
 
 gulp.task('uglify', function() {
 
-	gulp.src('./src/js/*.js')
+	gulp.src('./src/js/*.coffee')
+	    .pipe(coffee({bare: true}))
 	    .pipe(concat('apps.js'))
 	    .pipe(uglifyJS())
 	    .pipe(gulp.dest('./js'));

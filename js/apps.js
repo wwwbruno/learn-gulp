@@ -1,1 +1,1 @@
-console.log("Hello world"),console.log("I'm gulp!");
+console.log("Hello world!"),console.log("I'm gulp õ/");
