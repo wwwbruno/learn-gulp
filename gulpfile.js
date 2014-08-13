@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+sass = require('gulp-sass'),
 minifyCSS = require('gulp-minify-css'),
 uglifyJS = require('gulp-uglifyjs'),
 concat = require('gulp-concat'),
@@ -6,7 +7,8 @@ imagemin = require('gulp-imagemin');
  
 gulp.task('minify', function() {
 
-	gulp.src('./src/css/*.css')
+	gulp.src('./src/css/*.scss')
+		.pipe(sass())
 	    .pipe(concat('styles.css'))
 	    .pipe(minifyCSS())
 	    .pipe(gulp.dest('./css'));
@@ -30,7 +32,7 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/css/*.css', ['minify']);
     gulp.watch('./src/js/*.js', ['uglify']);
-    gulp.watch('./src/images/*', ['uglify']);
+    gulp.watch('./src/images/*', ['imagemin']);
 });
 
 gulp.task('default', ['imagemin','minify','uglify','watch']);
