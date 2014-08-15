@@ -5,7 +5,8 @@ minifyCSS = require('gulp-minify-css'),
 uglifyJS = require('gulp-uglifyjs'),
 coffee = require('gulp-coffee'),
 concat = require('gulp-concat'),
-imagemin = require('gulp-imagemin');
+imagemin = require('gulp-imagemin'),
+notify = require("gulp-notify");
 
 // minify Task
 gulp.task('minify', function() {
@@ -15,7 +16,8 @@ gulp.task('minify', function() {
 		.pipe(sass())
 	    .pipe(concat('styles.css'))
 	    .pipe(minifyCSS())
-	    .pipe(gulp.dest('./css'));
+	    .pipe(gulp.dest('./css'))
+	    .pipe(notify("minify task ok!"));
 });
 
 // uglify task
@@ -26,7 +28,8 @@ gulp.task('uglify', function() {
 	    .pipe(coffee({bare: true}))
 	    .pipe(concat('apps.js'))
 	    .pipe(uglifyJS())
-	    .pipe(gulp.dest('./js'));
+	    .pipe(gulp.dest('./js'))
+	    .pipe(notify("uglify task ok!"));
 });
 
 // imagemin task
@@ -35,7 +38,8 @@ gulp.task('imagemin', function() {
 	// optimize the images
 	gulp.src('./src/images/*')
 	    .pipe(imagemin())
-	    .pipe(gulp.dest('./images'));
+	    .pipe(gulp.dest('./images'))
+	    .pipe(notify("imagemin task ok!"));
 });
 
 // watch task
