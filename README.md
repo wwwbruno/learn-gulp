@@ -1,10 +1,10 @@
-# Learn gulp.js
+# Learn [gulp.js](http://gulpjs.com/)
 
 ## Prepare:
-### install nodejs
+### install [node.js](http://nodejs.org/)
 `sudo apt-get install nodejs-legacy`
 
-### install npm
+### install [npm](https://www.npmjs.org/)
 `sudo apt-get install npm`
 
 ### install gulp globally
